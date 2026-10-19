@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Poppins", "sans-serif";
+    font-family: "Poppins", sans-serif;
 }
 
 body {
@@ -95,9 +95,48 @@ body {
     text-decoration: none;
     font-weight: 600;
     letter-spacing: 0.5px;
+    z-index: 1;
+    overflow: hidden;
+    transition: .5s;
+}
+
+.btn-box a:hover {
+    color:#00abf0
 }
 
 .btn-box a:nth-child(2) {
     background: transparent;
     color: #00abf0;
+}
+
+.btn-box a:nth-child(2):hover {
+    color: #081b29;
+}
+
+
+.btn-box a:nth-child(2):hover::before {
+    background: #00abf0;
+}
+
+.btn-box a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #081b29;
+    z-index: -1;
+    transition: 0.5s;
+}
+
+.btn-box a:hover::before {
+    width: 100%;
+}
+
+.home-sci {
+    position: absolute;
+    bottom: 40px;
+    width: 170px;
+    background: red;
 }
